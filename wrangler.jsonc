@@ -1,0 +1,35 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	// Top-level configuration
+	"name": "myapps",
+	"main": "src/index.js",
+	"upload_source_maps": true,
+	// Set this to today's date
+	"compatibility_date": "2026-11-03",
+	"workers_dev": false,
+	"route": {
+		"pattern": "/*",
+		"zone_name": "*",
+	},
+	"kv_namespaces": [
+		{
+			"binding": "<MY_NAMESPACE>",
+			"id": "<KV_ID>",
+		},
+	],
+	"env": {
+		"staging": {
+			"name": "my-worker-staging",
+			"route": {
+				"pattern": "staging.example.org/*",
+				"zone_name": "example.org",
+			},
+			"kv_namespaces": [
+				{
+					"binding": "<MY_NAMESPACE>",
+					"id": "<STAGING_KV_ID>",
+				},
+			],
+		},
+	},
+}
