@@ -19,10 +19,10 @@
 	],
 	"env": {
 		"staging": {
-			"name": "my-worker-staging",
+			"name": "myapps",
 			"route": {
-				"pattern": "staging.example.org/*",
-				"zone_name": "example.org",
+				"pattern": "/*",
+				"zone_name": "*",
 			},
 			"kv_namespaces": [
 				{
